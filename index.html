@@ -1,0 +1,141 @@
+
+  <!DOCTYPE html>
+<html lang="pt-br">
+  
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="style.css">
+    <title>BeautyMake</title>
+</head>
+
+<body>
+
+    <header>
+        <h1> Beauty make </h1>
+        <p>Painel de produtos</p>
+    </header>
+
+    <section class="produtos">
+
+        <div class="card">
+            <div class="imagem">
+                <img src="img/Batom.png" alt="Batom">
+            </div>
+            <h2>Batom</h2>
+            <p>R$ 50,90</p>
+            <button onclick="comprarBatom()">Comprar</button>
+        </div>
+
+        <div class="card">
+            <div class="imagem">
+                <img src="img/Base.png" alt="Base">
+            </div>
+            <h2>Base Líquida</h2>
+            <p>R$ 49,90</p>
+            <button onclick="comprarBase()">Comprar</button>
+        </div>
+
+        <div class="card">
+            <div class="imagem">
+                <img src="img/PaletaSombras.png" alt="Paleta">
+            </div>
+            <h2>Paleta de Sombras</h2>
+            <p>R$ 89,90</p>
+            <button onclick="comprarPaleta()">Comprar</button>
+        </div>
+
+        <div class="card">
+    <div class="imagem">
+        <img src="img/Gloss.png" alt="Gloss">
+    </div>
+    <h2>Gloss Labial</h2>
+    <p>R$ 89,90</p>
+    <button onclick="comprarGloss()">Comprar</button>
+</div>
+
+
+<div class="card">
+    <div class="imagem">
+        <img src="img/Blush.png" alt="Blush">
+    </div>
+    <h2>Blush</h2>
+    <p>R$ 80,90</p>
+    <button onclick="comprarBlush()">Comprar</button>
+</div>
+
+
+<div class="card">
+    <div class="imagem">
+        <img src="img/Iluminador.png" alt="Iluminador">
+    </div>
+    <h2>Iluminador</h2>
+    <p>R$ 70,90</p>
+    <button onclick="comprarIluminador()">Comprar</button>
+</div>
+
+    </section>
+ 
+   <script> 
+    class Produto {
+    constructor(nomeProduto, preco) {
+        this.nome = nomeProduto;
+        this.preco = preco;
+        this.estoque = 10;
+    }
+
+    vender() {
+        if (this.estoque > 0) {
+            this.estoque = this.estoque - 1;
+
+            alert("Compra realizada! Você comprou: " + this.nome +
+                  ". Restam: " + this.estoque);
+        } else {
+            alert("O produto " + this.nome + " acabou!");
+        }
+    }
+}
+
+
+const produto1 = new Produto("Batom", 50.90);
+const produto2 = new Produto("Base Líquida", 49.90);
+const produto3 = new Produto("Paleta de Sombras", 89.90);
+const produto4 = new Produto("Gloss Labial", 89.90);
+const produto5 = new Produto("Blush", 80.90);
+const produto6 = new Produto("Iluminador", 70.90);
+
+function comprarBatom() {
+    produto1.vender();
+}
+
+function comprarBase() {
+    produto2.vender();
+}
+
+function comprarPaleta() {
+    produto3.vender();
+}   
+
+function comprarGloss() {
+
+    produto4.vender();
+
+}
+
+function comprarBlush() {
+
+    produto5.vender();
+
+}
+
+
+function comprarIluminador() {
+
+    produto6.vender();
+
+}
+
+          </script>
+</body>
+
+</html>
